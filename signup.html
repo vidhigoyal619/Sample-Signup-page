@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome To Registration Form</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+  <div id="main">
+    <div class="h-tag">
+      <h2>Sign-Up Page</h2>
+    </div>
+    <div class="login">
+      <div class="form-group">
+        <label for="t1">Enter Name:</label>
+        <input type="text" placeholder="Enter user here" id="t1" class="tb" maxlength="20">
+      </div>
+      <div class="form-group">
+        <label for="t2">Enter Email ID:</label>
+        <input type="text" placeholder="Enter Email ID here" id="t2" class="tb">
+      </div>
+      <div class="form-group">
+        <label for="t4">Enter Password:</label>
+        <input type="password" placeholder="Enter Password here" id="t4" class="tb" minlength="10">
+      </div>
+      <div class="form-group">
+        <label for="t5">Enter Confirm Password:</label>
+        <input type="password" placeholder="Enter Password here" id="t5" class="tb" minlength="10">
+      </div>
+      <div class="form-group">
+        <input type="reset" value="Clear Form" onclick="clearFunc()" id="res" class="btn">
+        <input type="submit" value="Create Account" class="btn" onclick="registration()">
+      </div>
+    </div>
+  </div>
+  <script>
+    function registration() {
+      var name = document.getElementById("t1").value;
+      var email = document.getElementById("t2").value;
+      var pwd = document.getElementById("t4").value;
+      var cpwd = document.getElementById("t5").value;
+
+      if (name === '' || email === '' || pwd === '' || cpwd === '') {
+        alert('Please fill in all the fields.');
+      } else {
+        // Write Rest of your validation logic
+        var pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+        // ... Write Your existing validation code ...
+        alert('Thank You for Signing-Up');
+      }
+    }
+
+    function clearFunc() {
+      document.getElementById("t1").value = "";
+      document.getElementById("t2").value = "";
+      document.getElementById("t4").value = "";
+      document.getElementById("t5").value = "";
+    }
+  </script>
+</body>
+</html>
